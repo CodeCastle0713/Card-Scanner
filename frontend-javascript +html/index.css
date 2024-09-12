@@ -1,0 +1,124 @@
+body {
+    margin: 0px;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(Inter-VariableFont_slnt,wght.ttf);
+}
+
+#container {
+    position: relative;
+    height: 100vh;
+    /* color: #EDEFF2; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    overflow: hidden;
+}
+
+#camera-stream {
+    /* object-fit: cover; */
+    /* width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0; */
+    position: absolute;
+}
+
+#topbar {
+    position: absolute;
+    z-index: 1;
+    width: calc(100% - 32px);
+    height: 24px;
+    top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #EDEFF2;
+    margin: 0 auto;
+}
+
+#card-step {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #EDEFF2;
+}
+
+.topbar-button {
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    border: none;
+    background: none;
+}
+
+#left-arrow-button {
+    padding: 0px;
+    width: 24px;
+    height: 24px;
+}
+
+#card-area {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#card-box {
+    width: 360px;
+    height: 240px;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2000px rgba(0, 0, 0, 0.8);
+}
+
+#card-status {
+    position: absolute;
+    transform: translateY(100%);
+    bottom: -16px;
+    max-width: 360px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#icons {
+    width: 24px;
+    height: 24px;
+}
+
+#card-status-content {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    margin-left: 8px;
+    color: #EDEFF2;
+    align-content: center;
+}
+
+#spinner {
+    display: none;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#completed-alert {
+    display: none;
+}

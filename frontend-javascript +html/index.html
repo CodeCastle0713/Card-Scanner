@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Scanner</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div id="container">
+        <video id="camera-stream" autoplay muted>
+            <!-- <source src="test_video.mp4" type="video/mp4"> -->
+        </video>
+        <div id="topbar">
+            <span>
+                <button id="left-arrow-button" class="topbar-button" aria-label="Left Arrow">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M14.9275 7L8.9636 12.0818L15.0654 16.9991" stroke="white" stroke-opacity="0.87"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                </button>
+            </span>
+            <span id="card-step">
+                Scan Card (1/2)
+            </span>
+            <span>
+                <button id="reset-button" class="topbar-button" aria-label="Refresh Button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M22 5.5V10.5H17" stroke="#EDEFF2" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 18.5L2 13.5H7" stroke="#EDEFF2" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M4.28182 9.33263C4.74288 8.05833 5.52648 6.91902 6.55952 6.02102C7.59255 5.12302 8.84133 4.4956 10.1894 4.19729C11.5374 3.89898 12.9407 3.93952 14.2684 4.31511C15.596 4.69071 16.8048 5.38912 17.7818 6.34518L22 10.2218M2 13.7782L6.21818 17.6548C7.19523 18.6109 8.40398 19.3093 9.73165 19.6849C11.0593 20.0605 12.4626 20.101 13.8106 19.8027C15.1587 19.5044 16.4075 18.877 17.4405 17.979C18.4735 17.081 19.2571 15.9417 19.7182 14.6674"
+                                stroke="#EDEFF2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <div id="card-area">
+            <div id="card-box">
+            </div>
+            <div id="card-status">
+                <span id="icons">
+                    <svg id="initial-alert" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="alert-circle">
+                            <path
+                                d="M12.5923 20.1128C17.0106 20.1128 20.5923 16.5311 20.5923 12.1128C20.5923 7.69451 17.0106 4.11279 12.5923 4.11279C8.17401 4.11279 4.59229 7.69451 4.59229 12.1128C4.59229 16.5311 8.17401 20.1128 12.5923 20.1128Z"
+                                stroke="#EDEFF2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path id="Vector_2" d="M12.5923 9.11279V12.1128" stroke="#EDEFF2" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path id="Vector_3" d="M12.5102 15H12.5002" stroke="#EDEFF2" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+
+                    <svg id="spinner" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path
+                                d="M4.8981 15.7527L4.61493 15.0734C3.9521 13.4807 3.82188 11.7164 4.2437 10.0436C4.66551 8.37082 5.61675 6.87921 6.95556 5.79123C8.29436 4.70325 9.94899 4.07718 11.6727 4.00641C13.3964 3.93564 15.0967 4.42395 16.5202 5.39851C17.9437 6.37308 19.014 7.78168 19.5716 9.41425C20.1291 11.0468 20.144 12.8159 19.6139 14.4576C19.0839 16.0993 18.0374 17.5256 16.6305 18.524C15.2236 19.5223 13.5316 20.0391 11.807 19.9973"
+                                stroke="#EDEFF2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </g>
+                    </svg>
+
+                    <svg id="completed-alert" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M18 8L9.75 16L6 12.3636" stroke="#EDEFF2" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </g>
+                    </svg>
+                </span>
+                <span id="card-status-content">
+                    Place the back side of your card inside the frame
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script async src="https://docs.opencv.org/4.x/opencv.js" type="text/javascript"></script>
+<script src="./index.js"></script>
+
+</html>
